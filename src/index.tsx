@@ -1,12 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Apihivas from './pages/Apihivas';
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/Loin" element={<Login />} />
+                <Route path="/Apihivas" element={<Apihivas />} />
+                <Route path="*" element={<h1>404</h1>} />
+            </Routes>
+        </BrowserRouter>
+    </React.StrictMode>,
 );
-
-root.render(<React.StrictMode>Hello World!</React.StrictMode>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
